@@ -30,23 +30,27 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView displaySortedResult = (TextView) findViewById(R.id.display_result);
 
-                int integerLeft = Integer.parseInt(stringLeft);
-                int integerMiddle = Integer.parseInt(stringMiddle);
-                int integerRight = Integer.parseInt(stringRight);
+                int intLeft = Integer.parseInt(stringLeft);
+                int intMiddle = Integer.parseInt(stringMiddle);
+                int intRight = Integer.parseInt(stringRight);
 
-                if ((integerLeft < integerMiddle) && (integerLeft < integerRight) && (integerMiddle < integerRight)) {
+                if ((intLeft < intMiddle) && (intLeft < intRight) && (intMiddle < intRight)) {
                     displaySortedResult.setText(stringLeft + "\n" + stringMiddle + "\n" + stringRight);
-                } else if ((integerLeft < integerMiddle) && (integerLeft < integerRight) && (integerMiddle > integerRight)) {
+                } else if ((intLeft < intMiddle) && (intLeft < intRight) && (intMiddle > intRight)) {
                     displaySortedResult.setText(stringLeft + "\n" + stringRight + "\n" + stringMiddle);
-                } else if ((integerMiddle < integerLeft) && (integerMiddle < integerRight) && (integerLeft < integerRight)) {
+                } else if ((intMiddle < intLeft) && (intMiddle < intRight) && (intLeft < intRight)) {
                     displaySortedResult.setText(stringMiddle + "\n" + stringLeft + "\n" + stringRight);
-                } else if ((integerRight < integerLeft) && (integerLeft < integerMiddle) && (integerMiddle > integerRight)) {
+                } else if ((intRight < intLeft) && (intLeft < intMiddle) && (intMiddle > intRight)) {
                     displaySortedResult.setText(stringRight + "\n" + stringLeft + "\n" + stringMiddle);
-                } else if ((integerMiddle < integerLeft) && (integerMiddle < integerRight) && (integerLeft > integerRight)) {
+                } else if ((intMiddle < intLeft) && (intMiddle < intRight) && (intLeft > intRight)) {
                     displaySortedResult.setText(stringMiddle + "\n" + stringRight + "\n" + stringLeft);
-                } else if ((integerRight < integerLeft) && (integerRight < integerMiddle) && (integerMiddle < integerLeft)) {
+                } else if ((intRight < intLeft) && (intRight < intMiddle) && (intMiddle < intLeft)) {
                     displaySortedResult.setText(stringRight + "\n" + stringMiddle + "\n" + stringLeft);
                 }
+
+                integerLeftEditText.getText().clear();  
+                integerMiddleEditText.getText().clear();
+                integerRightEditText.getText().clear();
             }
         });
     }
